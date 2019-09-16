@@ -23,8 +23,6 @@
         if (window.xhr.status === 200) {
           window.ads = window.xhr.response;
           window.filtered = onSuccess(window.ads);
-          console.log(window.ads);
-          console.log(window.filtered);
         } else {
           onError();
         }
