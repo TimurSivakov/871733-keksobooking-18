@@ -48,12 +48,10 @@
   };
   var mapIsEnabled = 'false';
   var maxAdsNumber = 5;
-  var errorButton = main.querySelector('.error__button');
   var filters = map.querySelector('.map__filters');
   var filterTypeSelect = filters.querySelector('#housing-type');
   window.data = {
     main: main,
-    errorButton: errorButton,
     map: map,
     similarPinTemplate: similarPinTemplate,
     similarErrorMessage: similarErrorMessage,
