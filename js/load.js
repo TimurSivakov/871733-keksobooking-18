@@ -1,13 +1,14 @@
 'use strict';
 (function () {
+  var main = document.querySelector('main');
   window.load = {
     onError: function () {
       var fragment = document.createDocumentFragment();
       var errorMessage = window.data.similarErrorMessage.cloneNode(true);
       fragment.appendChild(errorMessage);
-      window.data.main.appendChild(fragment);
+      main.appendChild(fragment);
       errorMessage.addEventListener('click', function () {
-        window.data.main.removeChild(errorMessage);
+        main.removeChild(errorMessage);
       });
     },
     /**

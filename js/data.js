@@ -1,6 +1,5 @@
 'use strict';
 (function () {
-  var main = document.querySelector('main');
   var map = document.querySelector('.map');
   var similarPinTemplate = document.querySelector('#pin').content.querySelector('.map__pin');
   var similarErrorMessage = document.querySelector('#error').content.querySelector('.error');
@@ -51,7 +50,6 @@
   var filters = map.querySelector('.map__filters');
   var filterTypeSelect = filters.querySelector('#housing-type');
   window.data = {
-    main: main,
     map: map,
     similarPinTemplate: similarPinTemplate,
     similarErrorMessage: similarErrorMessage,
