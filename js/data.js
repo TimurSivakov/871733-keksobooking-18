@@ -1,22 +1,5 @@
 'use strict';
 (function () {
-  var main = document.querySelector('main');
-  var map = document.querySelector('.map');
-  var similarPinTemplate = document.querySelector('#pin').content.querySelector('.map__pin');
-  var similarErrorMessage = document.querySelector('#error').content.querySelector('.error');
-  var similarPinElement = map.querySelector('.map__pins');
-  var mainPin = map.querySelector('.map__pin--main');
-  var adForm = document.querySelector('.ad-form');
-  var adFormFieldsets = adForm.querySelectorAll('.ad-form__element');
-  var adFormTypeSelect = adForm.querySelector('#type');
-  var adFormPriceInput = adForm.querySelector('#price');
-  var adFormTimeInSelect = adForm.querySelector('#timein');
-  var adFormTimeInOption = adFormTimeInSelect.querySelectorAll('option');
-  var adFormTimeOutSelect = adForm.querySelector('#timeout');
-  var adFormTimeOutOption = adFormTimeOutSelect.querySelectorAll('option');
-  var mapFilterSelects = map.querySelectorAll('.map__filter');
-  var mapFilterInputs = map.querySelectorAll('.map__checkbox');
-  var addressInput = adForm.querySelector('#address');
   var USERS_AVATARS = ['01', '02', '03', '04', '05', '06', '07', '08'];
   var TYPES_OF_HOUSING = ['bungalo', 'flat', 'house', 'palace'];
   var NUMBER_OF_ADS = 8;
