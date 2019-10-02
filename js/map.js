@@ -3,7 +3,8 @@
   var COUNT_PIN = 5;
   var deps = {
     data: window.data,
-    form: window.form
+    form: window.form,
+    pin: window.pin
   };
   window.map = {
     /**
@@ -38,7 +39,7 @@
             x: moveEvt.clientX,
             y: moveEvt.clientY
           };
-          if (deps.data.mainPin.offsetTop - shift.y > deps.data.MAP_Y_RANGE.min - deps.data.PIN_HEIGHT && deps.data.mainPin.offsetTop - shift.y < deps.data.MAP_Y_RANGE.max) {
+          if (deps.data.mainPin.offsetTop - shift.y > deps.data.MAP_Y_RANGE.min - deps.pin.PIN_HEIGHT && deps.data.mainPin.offsetTop - shift.y < deps.data.MAP_Y_RANGE.max) {
             deps.data.mainPin.style.top = (deps.data.mainPin.offsetTop - shift.y) + 'px';
           }
           if (deps.data.mainPin.offsetLeft - shift.x > deps.data.MAP_X_RANGE.min - deps.data.MAIN_PIN_WIDTH / 2 && deps.data.mainPin.offsetLeft - shift.x < deps.data.MAP_X_RANGE.max - deps.data.MAIN_PIN_WIDTH / 2) {
