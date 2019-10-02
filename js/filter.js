@@ -3,11 +3,11 @@
   window.filter = {
     /**
      * Функция копирует данные с сервера
-     * @param {* []} ads
+     * @param {* []} data
      * @return {[]}
      */
-    copyAds: function () {
-      window.filteredAds = window.ads.filter(function (ad) {
+    copyAds: function (data) {
+      window.filteredAds = data.filter(function (ad) {
         window.data.filterTypeSelect.addEventListener('change', function () {
           return ad.offer.type === 'house';
         });

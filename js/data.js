@@ -1,11 +1,10 @@
 'use strict';
 (function () {
-  var main = document.querySelector('main');
   var map = document.querySelector('.map');
   var similarPinTemplate = document.querySelector('#pin').content.querySelector('.map__pin');
   var similarErrorMessage = document.querySelector('#error').content.querySelector('.error');
-  var similarPinElement = map.querySelector('.map__pins');
-  var mainPin = map.querySelector('.map__pin--main');
+  var similarPinElement = document.querySelector('.map__pins');
+  var mainPin = document.querySelector('.map__pin--main');
   var adForm = document.querySelector('.ad-form');
   var adFormFieldsets = adForm.querySelectorAll('.ad-form__element');
   var adFormTypeSelect = adForm.querySelector('#type');
@@ -14,8 +13,8 @@
   var adFormTimeInOption = adFormTimeInSelect.querySelectorAll('option');
   var adFormTimeOutSelect = adForm.querySelector('#timeout');
   var adFormTimeOutOption = adFormTimeOutSelect.querySelectorAll('option');
-  var mapFilterSelects = map.querySelectorAll('.map__filter');
-  var mapFilterInputs = map.querySelectorAll('.map__checkbox');
+  var mapFilterSelects = document.querySelectorAll('.map__filter');
+  var mapFilterInputs = document.querySelectorAll('.map__checkbox');
   var addressInput = adForm.querySelector('#address');
   var USERS_AVATARS = ['01', '02', '03', '04', '05', '06', '07', '08'];
   var TYPES_OF_HOUSING = ['bungalo', 'flat', 'house', 'palace'];
@@ -30,8 +29,6 @@
     min: 130,
     max: 630
   };
-  var PIN_WIDTH = 50;
-  var PIN_HEIGHT = 70;
   var MAIN_PIN_X = 570;
   var MAIN_PIN_Y = 375;
   var MAIN_PIN_WIDTH = 65;
@@ -48,12 +45,18 @@
   };
   var mapIsEnabled = 'false';
   var maxAdsNumber = 5;
-  var errorButton = main.querySelector('.error__button');
-  var filters = map.querySelector('.map__filters');
+  var filters = document.querySelector('.map__filters');
   var filterTypeSelect = filters.querySelector('#housing-type');
+
+  var pins = [];
+
   window.data = {
-    main: main,
-    errorButton: errorButton,
+    setPins: function (data) {
+      pins = data;
+    },
+    getPins: function () {
+      return pins;
+    },
     map: map,
     similarPinTemplate: similarPinTemplate,
     similarErrorMessage: similarErrorMessage,
@@ -77,8 +80,6 @@
     ADFORM_DISABLED_CLASS: ADFORM_DISABLED_CLASS,
     MAP_X_RANGE: MAP_X_RANGE,
     MAP_Y_RANGE: MAP_Y_RANGE,
-    PIN_WIDTH: PIN_WIDTH,
-    PIN_HEIGHT: PIN_HEIGHT,
     MAIN_PIN_X: MAIN_PIN_X,
     MAIN_PIN_Y: MAIN_PIN_Y,
     MAIN_PIN_WIDTH: MAIN_PIN_WIDTH,
