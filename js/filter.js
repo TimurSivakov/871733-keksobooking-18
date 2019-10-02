@@ -3,7 +3,7 @@
   window.filter = {
     /**
      * Функция копирует данные с сервера
-     * @param {* []} ads
+     * @param {* []} data
      * @return {[]}
      */
     copyAds: function (data) {
