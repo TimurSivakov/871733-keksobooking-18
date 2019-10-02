@@ -1,5 +1,6 @@
 'use strict';
 (function () {
+  var COUNT_PIN = 5;
   var deps = {
     data: window.data,
     form: window.form
@@ -11,8 +12,9 @@
      */
     renderAdsOnMap: function () {
       var fragment = document.createDocumentFragment();
-      for (var i = 0; i < 5; i++) {
-        fragment.appendChild(window.renderMapPin(window.utils.getRandomAdsParameter(window.ads), deps.data.PIN_WIDTH, deps.data.PIN_HEIGHT));
+      var data = deps.data.getPins(data);
+      for (var i = 0; i < COUNT_PIN; i++) {
+        fragment.appendChild(window.renderMapPin(data[i]));
       }
       deps.data.similarPinElement.appendChild(fragment);
     },

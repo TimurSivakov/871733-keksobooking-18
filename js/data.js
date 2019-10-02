@@ -49,7 +49,16 @@
   var maxAdsNumber = 5;
   var filters = document.querySelector('.map__filters');
   var filterTypeSelect = filters.querySelector('#housing-type');
+
+  var pins = [];
+
   window.data = {
+    setPins: function (data) {
+      pins = data;
+    },
+    getPins: function () {
+      return pins;
+    },
     map: map,
     similarPinTemplate: similarPinTemplate,
     similarErrorMessage: similarErrorMessage,
