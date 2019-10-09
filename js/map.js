@@ -56,6 +56,11 @@
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp);
       });
+      deps.data.mainPin.addEventListener('keydown', function (evt) {
+        if (evt.keyCode === 13) {
+          window.form.setActiveCondition();
+        }
+      });
     }
   };
 })();
