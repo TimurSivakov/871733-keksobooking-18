@@ -20,6 +20,13 @@
     threeRooms: adFormRoomsSelect.querySelector('option:nth-child(3)'),
     hundredRooms: adFormRoomsSelect.querySelector('option:last-child'),
   };
+  var roomCapacitySelect = adForm.querySelector('#capacity');
+  var roomCapacityOption = {
+    oneGuest: roomCapacitySelect.querySelector('option:first-child'),
+    twoGuests: roomCapacitySelect.querySelector('option:nth-child(2)'),
+    threeGuests: roomCapacitySelect.querySelector('option:nth-child(3)'),
+    notForGuests: roomCapacitySelect.querySelector('option:last-child')
+  };
   var mapFilterSelects = document.querySelectorAll('.map__filter');
   var mapFilterInputs = document.querySelectorAll('.map__checkbox');
   var addressInput = adForm.querySelector('#address');
@@ -79,6 +86,8 @@
     adFormTimeOutOption: adFormTimeOutOption,
     adFormRoomsSelect: adFormRoomsSelect,
     adFormRoomsOption: adFormRoomsOption,
+    roomCapacitySelect: roomCapacitySelect,
+    roomCapacityOption: roomCapacityOption,
     mapFilterSelects: mapFilterSelects,
     mapFilterInputs: mapFilterInputs,
     addressInput: addressInput,
