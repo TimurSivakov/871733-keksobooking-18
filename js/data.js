@@ -13,6 +13,13 @@
   var adFormTimeInOption = adFormTimeInSelect.querySelectorAll('option');
   var adFormTimeOutSelect = adForm.querySelector('#timeout');
   var adFormTimeOutOption = adFormTimeOutSelect.querySelectorAll('option');
+  var adFormRoomsSelect = adForm.querySelector('#room_number');
+  var adFormRoomsOption = {
+    oneRoom: adFormRoomsSelect.querySelector('option:first-child'),
+    twoRooms: adFormRoomsSelect.querySelector('option:nth-child(2)'),
+    threeRooms: adFormRoomsSelect.querySelector('option:nth-child(3)'),
+    hundredRooms: adFormRoomsSelect.querySelector('option:last-child'),
+  };
   var mapFilterSelects = document.querySelectorAll('.map__filter');
   var mapFilterInputs = document.querySelectorAll('.map__checkbox');
   var addressInput = adForm.querySelector('#address');
@@ -70,6 +77,8 @@
     adFormTimeInOption: adFormTimeInOption,
     adFormTimeOutSelect: adFormTimeOutSelect,
     adFormTimeOutOption: adFormTimeOutOption,
+    adFormRoomsSelect: adFormRoomsSelect,
+    adFormRoomsOption: adFormRoomsOption,
     mapFilterSelects: mapFilterSelects,
     mapFilterInputs: mapFilterInputs,
     addressInput: addressInput,
