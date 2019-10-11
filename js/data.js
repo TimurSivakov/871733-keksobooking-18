@@ -22,11 +22,12 @@
   };
   var roomCapacitySelect = adForm.querySelector('#capacity');
   var roomCapacityOption = {
-    oneGuest: roomCapacitySelect.querySelector('option:first-child'),
+    oneGuest: roomCapacitySelect.querySelector('option:nth-child(3)'),
     twoGuests: roomCapacitySelect.querySelector('option:nth-child(2)'),
-    threeGuests: roomCapacitySelect.querySelector('option:nth-child(3)'),
+    threeGuests: roomCapacitySelect.querySelector('option:first-child'),
     notForGuests: roomCapacitySelect.querySelector('option:last-child')
   };
+  var adFormSubmit = adForm.querySelector('.ad-form__submit');
   var mapFilterSelects = document.querySelectorAll('.map__filter');
   var mapFilterInputs = document.querySelectorAll('.map__checkbox');
   var addressInput = adForm.querySelector('#address');
@@ -110,6 +111,7 @@
     mapIsEnabled: mapIsEnabled,
     maxAdsNumber: maxAdsNumber,
     filters: filters,
-    filterTypeSelect: filterTypeSelect
+    filterTypeSelect: filterTypeSelect,
+    adFormSubmit: adFormSubmit
   };
 })();

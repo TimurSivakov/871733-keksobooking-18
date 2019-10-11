@@ -75,7 +75,20 @@
           deps.data.adFormTimeInSelect.value = deps.data.adFormTimeInOption[SelectedIndex].value;
         }
       });
-
+      var setCapacity = function () {
+        if (deps.data.adFormRoomsSelect.value === deps.data.adFormRoomsOption.oneRoom.value && deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.oneGuest.value) {
+          deps.data.roomCapacitySelect.setCustomValidity('1-комнатный номер только для 1 гостя');
+        } else if (deps.data.adFormRoomsSelect.value === deps.data.adFormRoomsOption.twoRooms.value && (deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.oneGuest.value && deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.twoGuests.value)) {
+          deps.data.roomCapacitySelect.setCustomValidity('2-комнатный номер только для 1 или 2 гостей');
+        } else if (deps.data.adFormRoomsSelect.value === deps.data.adFormRoomsOption.threeRooms.value && (deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.oneGuest.value && deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.twoGuests.value && deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.twoGuests.value)) {
+          deps.data.roomCapacitySelect.setCustomValidity('3-комнатный номер максимально рассчитан на 3 гостей');
+        } else if (deps.data.adFormRoomsSelect.value === deps.data.adFormRoomsOption.hundredRooms.value && deps.data.roomCapacitySelect.value !== deps.data.roomCapacityOption.notForGuests.value) {
+          deps.data.roomCapacitySelect.setCustomValidity('Не для гостей');
+        } else {
+          deps.data.roomCapacitySelect.setCustomValidity('');
+        }
+      };
+      deps.data.adFormSubmit.addEventListener('click', setCapacity);
     }
   };
 })();
